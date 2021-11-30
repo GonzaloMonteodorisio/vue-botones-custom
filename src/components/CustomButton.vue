@@ -15,11 +15,11 @@
     :name="name"
     @click="callback($event)"
   >
-    <progress-circular
+    <!-- <progress-circular
       v-if="loading"
       :color="color === 'secondary' ? 'text-blue-500' : 'text-white'"
       class="mr-2"
-    />
+    /> -->
     <span>
       <slot name="icon" />
     </span>
@@ -64,9 +64,10 @@ export default {
     },
   },
   methods: {
-    callback(e) {
-      this.$emit('click', e)
+    callback() {
+      this.$emit('click')
     }
-  }
+  },
+  emits: ['click']
 }
 </script>

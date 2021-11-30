@@ -3,16 +3,26 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import CustomButton from './components/CustomButton.vue'
 
-const mensaje = e => {
+const mensaje = () => {
   console.log('Esto es un mensaje')
 }
+
+const mensaje2 = () => {
+  console.log('Esto es otro mensaje')
+}
+
 </script>
 
 <template>
   <CustomButton
     title="Mi botón custom"
     color="secondary"
-    @click.prevent="mensaje"
+    @click="mensaje"
+  />
+  <CustomButton
+    title="Mi botón custom 2"
+    color="yellow"
+    @click="mensaje2"
   />
 </template>
 
